@@ -11,15 +11,6 @@ class signupserialiser(serializers.ModelSerializer)  :
     class Meta:
         model = user 
         fields = [ 'email','phone','password'] 
-    def create(self, validated_data):
-          user1 = user.objects.create(
-              email=validated_data['email'],
-              phone=validated_data['phone'],
-            
-            )
-          user1.set_password(raw_password=validated_data['password']) 
-          user1.save()
-          return user1
 class todoserializer(serializers.ModelSerializer):
     class Meta:
         model = Todo

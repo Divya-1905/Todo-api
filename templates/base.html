@@ -46,11 +46,12 @@
 </head>
 
 <body>
-
+    
      {% block content  %}
 {% endblock   %}
     <script>
-      var host = window.location.protocol + "//" + window.location.host;
+      var host = window.location.protocol + "//" + window.location.host; 
+      {% comment %} host can check a window.location.protocol and host is mention and called the fuction host can automaytically changened {% endcomment %}
       function logout(){
 let token = localStorage.getItem('token')
 fetch('http://127.0.0.1:9000/api/logout',{

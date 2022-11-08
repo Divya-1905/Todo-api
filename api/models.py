@@ -54,4 +54,4 @@ class Todo(models.Model):
     notification = models.CharField(max_length=34,blank=True)
     plannedhours = models.IntegerField(default=0,blank=True)
     def  __str__(self):
-        return self.tittle
+        return self.details

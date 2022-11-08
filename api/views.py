@@ -88,7 +88,9 @@ class  CreateTodo(CreateAPIView)  :
        User = self.request.user
        print(User)
        queryset = Todo.objects.filter(accountuser=User)
-       print(queryset)
+       queryset1= Todo.objects.all().distinct('tittle')
+       for x in queryset1:
+           print(x.notification,x.plannedhours)
        serializer = todoserializer(queryset,many =True)
        return Response(serializer.data)
 class UpdateTodo(RetrieveUpdateDestroyAPIView):  
